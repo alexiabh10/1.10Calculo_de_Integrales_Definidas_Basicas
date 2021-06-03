@@ -1,0 +1,43 @@
+% Ti­tulo: 1.10 Calculo de Integrales Definidas Basicas 
+% Autor: Alexia Michell Blas Hernandez (alexiabh10) michhernandez1001@gmail.com
+% Fecha: 20210603
+% Grupo:3201
+% Correo: michhernandez1001@gmail.com
+% Materia: Calculo Integral
+%Ejercicio 1:Una particula comienza desde su origen.Su velocidad en millas por hora
+%vine dada por  V(t)= sqrt(t)+t 
+%Donde t es el numero de horas, desde que la particula dejo su origen  
+%¿Que distancia recorre la particula durante la 2°,3° y 4° hora?
+%(de t=1 a t=4)?
+
+%sqrt(x)+ x
+
+clc
+clear  
+
+syms x;
+fx=input("INGRESE LA FUNCION :")
+funcion = inline (char(fx))
+a= input("INGRESE EL VALOR DEL LIMITE INFERIOR  "); 
+b= input("INGRESE EL VALOR DEL LIMITE SUPERIOR  ");
+VELOCIDAD =(2*(b*sqrt(b))/3 + b^2/2) - (2*(a*sqrt(a))/3 + a^2/2)
+
+x = 1:0.2:4;
+
+h1=input("INGRESA LA HORA QUE PIDE EL PROBLEMA :");
+Distancia_en_millas1=VELOCIDAD*h1
+h2=input("INGRESA LA HORA QUE PIDE EL PROBLEMA :");
+Distancia_en_millas2=VELOCIDAD*h2
+h3=input("INGRESA LA HORA QUE PIDE EL PROBLEMA :");
+Distancia_en_millas3=VELOCIDAD*h3
+
+Distancia_en_metros=(Distancia_en_millas1)*(1609.344)
+Distancia_en_metros=(Distancia_en_millas2)*(1609.344)
+Distancia_en_metros=(Distancia_en_millas3)*(1609.344)
+
+f=x;
+plot(f,x);
+grid on
+hold on
+plot(f,x )
+bar(f,x,"m")
