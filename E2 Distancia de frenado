@@ -1,0 +1,37 @@
+% Ti­tulo: 1.10 Calculo de Integrales Definidas Basicas 
+% Autor: Alexia Michell Blas Hernandez (alexiabh10) michhernandez1001@gmail.com
+% Fecha: 20210603
+% Grupo:3201
+% Correo: michhernandez1001@gmail.com
+% Materia: Calculo Integral
+%Ejercicio 2:Disancia de Frenado
+%el conductor de un vehiculo qu vija a 40 millas/h(58.67 pies/seg) 
+%aplic los frenos suavemente al principio, luego con mas fuerza deteniendose 
+%por completo despues de 7 seg.
+%la velocidad es funcional del tiempo se modela mediante la funcion 
+%              V(t)= -1-197t^2 + 58.57
+%Donde V esta en pie* seg, t en seg y 0 <t <7.
+%¿Que distancia en metros recorrio el vehiculo mientras el conductor estaba frenando?              
+%(57.473)*x^2
+
+clc
+clear  
+
+syms x;
+fx=input("INGRESE LA FUNCION :")
+funcion = inline (char(fx))
+a= input("INGRESE EL VALOR DEL LIMITE INFERIOR  "); 
+b= input("INGRESE EL VALOR DEL LIMITE SUPERIOR  ");
+VELOCIDAD =(57.473*(b^3)/3)-(57.473*(a^3)/3)
+
+x = 0:0.2:7;
+VI=input("INGRESA TU VELOCIDAD INICIAL : ")
+Distancia_Pies=(VI + VELOCIDAD) /2*(7)  
+Distancia_Metros=Distancia_Pies/3.28
+
+f=x;
+plot(f,x);
+grid on
+hold on
+plot(f,x )
+bar(f,x,"m")
